@@ -1,0 +1,13 @@
+from PIL import Image
+# Abrimos las dos imágenes que queremos mezclar
+imagen1 = Image.open('messi.jpg')
+imagen2 = Image.open('ronaldo.jpg')
+# Aseguramos que ambas imágenes tengan el mismo tamaño
+imagen1 = imagen1.resize((500, 500))
+imagen2 = imagen2.resize((500, 500))
+# Definimos el factor de mezcla (entre 0.0 y 1.0)
+factor = 0.5 # Puedes cambiar este valor para ver diferentes efectos
+# Mezclamos las imágenes usando el método blend
+imagen_mezclada = Image.blend(imagen1, imagen2, factor)
+# Guardamos la imagen resultante
+imagen_mezclada.save('messironaldomezcladas.jpg')
